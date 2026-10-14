@@ -25,7 +25,7 @@
 ```bash
 pacman-key -v archlinux-版本-x86_64.iso.sig
 ```
-[[./Installation_Problems#7. PGP签名损|PGP签名损]]
+[[Installation_Problems#7. PGP签名损|PGP签名损]]
 
 ### 3. 制作启动 U 盘
 - 使用 `dd`（Linux/macOS）或 Rufus/balenaEtcher（Windows）将 ISO 写入 U 盘。  
@@ -50,7 +50,7 @@ pacman-key -v archlinux-版本-x86_64.iso.sig
 
 ### 1. 启动选项说明
 - **本次选择**：第一个标准模式。
-- **其他选择**：[[./Installation_Problems#1. 启动选项说明|参照]]
+- **其他选择**：[[Installation_Problems#1. 启动选项说明|参照]]
 ### 2. 验证启动模式
 ```bash
 cat /sys/firmware/efi/fw_platform_size
@@ -73,7 +73,7 @@ iwctl
 [iwd]# exit
 ```
 
-[[./Installation_Problems#2. 网络连接问题|遇到网络连接问题请戳这]]
+[[Installation_Problems#2. 网络连接问题|遇到网络连接问题请戳这]]
 
 ### 4. 同步系统时钟
 
@@ -95,7 +95,7 @@ timedatectl status
 lsblk          # 显示分区概览
 fdisk -l       # 显示完整分区表（含未分配空间）
 ```
->看不到[[./Installation_Problems#4. 看不到预留空间|请戳这]]
+>看不到[[Installation_Problems#4. 看不到预留空间|请戳这]]
 
 ### 2. 创建分区（UEFI + GPT 示例）
 
@@ -119,7 +119,7 @@ fdisk -l       # 显示完整分区表（含未分配空间）
 (parted) mkpart primary ext4 起始 结束
 (parted) quit
 ```
-- 或使用 [[./Installation_Problems#5. cfdisk操作步骤|cfdisk]]（或 `gdisk`）操作磁盘（如 `/dev/nvme0n1`）：
+- 或使用 [[Installation_Problems#5. cfdisk操作步骤|cfdisk]]（或 `gdisk`）操作磁盘（如 `/dev/nvme0n1`）：
 
 ### 3. 格式化分区
 ```bash
@@ -140,7 +140,7 @@ mount /dev/nvme0n1pY /mnt                     # 挂载根分区
 mount --mkdir /dev/nvme0n1pX /mnt/boot       # 挂载 EFI 分区到 /boot
 mount --mkdir /dev/nvme0n1pZ /mnt/home       # 挂载 Home（若有）
 ```
-- [[./Installation_Problems#6. mkdir参数|mkdir参数]]
+- [[Installation_Problems#6. mkdir参数|mkdir参数]]
 
 ---
 
@@ -201,7 +201,7 @@ echo "myarch" > /etc/hostname
 ```bash
 passwd
 ```
-- [[./Installation_Problems#9. 修复 root 账户锁定|root 账户锁定]]
+- [[Installation_Problems#9. 修复 root 账户锁定|root 账户锁定]]
 
 ### 6. 安装网络管理工具（重要）
 ```bash
@@ -269,8 +269,8 @@ umount -R /mnt
 reboot
 ```
 - 重启后拔掉 U 盘，进入 BIOS 将 `Linux Boot Manager`（或 GRUB）设为第一启动项。
-- [[./Installation_Problems#8. 重启后无法进入系统|找不到设备]]
-- [[./Installation_Problems#10. 双系统启动efi配置|双系统启动efi配置]]
+- [[Installation_Problems#8. 重启后无法进入系统|找不到设备]]
+- [[Installation_Problems#10. 双系统启动efi配置|双系统启动efi配置]]
 
 ---
 
@@ -289,7 +289,7 @@ $ iwctl
 # 输入密码
 $ ping 8.8.8.8  # 验证
 ```
->南邮这种**校园网**需要登陆，[[./Installation_Problems#3. 南邮校园网连接(脚本)|请戳这]]
+>南邮这种**校园网**需要登陆，[[Installation_Problems#3. 南邮校园网连接(脚本)|请戳这]]
 
 ### 2. 安装桌面环境（以 KDE Plasma 为例）(可选)
 ```bash
@@ -298,7 +298,7 @@ sudo systemctl enable sddm
 ```
 
 ### 3. 配置中文环境（TTY 英文 + 图形中文）
-- **保持系统 LANG 为英文**（[[./Installation_Problems#11. 命令行出现方块字|避免 TTY 方块]]）：
+- **保持系统 LANG 为英文**（[[Installation_Problems#11. 命令行出现方块字|避免 TTY 方块]]）：
   ```bash
   sudo vim /etc/locale.conf
   LANG=en_US.UTF-8
@@ -324,7 +324,7 @@ sudo pacman -S fcitx5 fcitx5-chinese-addons fcitx5-qt fcitx5-gtk
   export XMODIFIERS=@im=fcitx
   ```
 
-### 5. 配置官方镜像源（加速 [[./Installation_Problems#12. pacman镜像理解设置|pacman]]）
+### 5. 配置官方镜像源（加速 [[Installation_Problems#12. pacman镜像理解设置|pacman]]）
 - 编辑 `/etc/pacman.d/mirrorlist`，将中国镜像源置顶：
   ```
   Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
