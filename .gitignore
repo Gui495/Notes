@@ -1,33 +1,39 @@
-# 忽略 Obsidian 缓存与临时文件
-.obsidian/cache/
-
+# ─── Obsidian ───────────────────────────────
+# 忽略工作区与缓存（每次打开都会变，无版本意义）
 .obsidian/workspace.json
-
+.obsidian/workspace-mobile.json
 .obsidian/workspaces/
-
+.obsidian/cache/
 .obsidian/trash/
+.trash/
 
-# 忽略插件生成的缓存数据（如 Git 插件历史记录）
-.obsidian/plugins/obsidian-git/data.json   # [[1][5][11]()
+# 忽略插件产生的运行数据（保留插件本体和配置）
+.obsidian/plugins/*/data.json
+.obsidian/plugins/recent-files-obsidian/data.json
 
-# 忽略系统文件
+# 忽略主题缓存（保留主题本体）
+.obsidian/themes/*/.cache/
+
+# ─── AI agent 工作目录 ──────────────────────
+# 按你实际使用的 agent 取消注释
+# .dsh/
+# .claude/
+# .agent/
+# .smart-env/
+
+# ─── 系统文件 ───────────────────────────────
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# 忽略备份文件
+# ─── 备份与临时文件 ─────────────────────────
 *.bak
 *.tmp
+*.swp
+*~
 
-# 忽略附件文件夹（按需启用）
-# attachments/
-
-# 特殊配置：保留核心插件配置（可选）
-!.obsidian/plugins/  # 保留插件目录
-!.obsidian/themes/   # 保留主题目录
-
-# Ignore Smart Environment folder
-.smart-env
-.obsidian/plugins/recent-files-obsidian/data.json
-.obsidian/workspace-mobile.json
-.trash/
+# ─── 大附件（按需启用）─────────────────────
+# 如果 raw/ 里有大 PDF、图片，考虑用 Git LFS，
+# 或直接忽略附件文件夹，只提交文字笔记
+# raw/**/attachments/
+# raw/**/*.pdf
