@@ -70,7 +70,7 @@ g++ -O3 -no-pie -flto -s version2_ASMcross.cpp -o njupt_login
 
 ## 素材完整性问题
 
-同一素材内部的设备名写法不一致（§4/§5 用 `/dev/mem0n1`、`/dev/mem1`，§8 用 `/dev/nvme*`），已在 [[持久化块设备命名]] 中标注为矛盾待裁决。
+同一素材内部的设备名写法不一致（§4/§5 用 `/dev/mem0n1`、`/dev/mem1`，§8 用 `/dev/nvme*`）。已裁定 `mem*` 为笔误——内核的 NVMe 命名只可能是 `nvme<控制器>n<命名空间>`，以 `nvme*` 为准，详见 [[持久化块设备命名]]。
 
 ## 关联
 
