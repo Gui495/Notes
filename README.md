@@ -1,3 +1,4 @@
+English | [中文](README.zh.md)
 # Notes
 
 An Obsidian knowledge base maintained jointly by humans and AI agents.
