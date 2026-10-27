@@ -45,11 +45,15 @@ raw material        knowledge             entry point
 ```
 Notes/
 ├── AGENTS.md                  # Agent operation contract, must read first
-├── README.md                  # This file
+├── README.md                  # This file (English)
+├── README.zh.md               # Chinese version
 ├── raw/                       # Raw material layer (read-only)
 │   ├── College_Math/
+│   ├── Microcomputer_Principles/
 │   ├── Linux/
-│   └── Microcomputer_Principles/
+│   ├── Artificial_Intelligence/
+│   ├── Frontend_Backend/      # Java, MySQL, big-data stack
+│   └── Embedded_System/       # FPGA / Verilog
 ├── wiki/                      # Compiled knowledge layer (agent-owned)
 │   ├── concepts/              # Concept pages: one concept per page
 │   ├── entities/              # Entity pages: people, tools, papers, courses
@@ -57,12 +61,17 @@ Notes/
 │   ├── comparisons/           # Comparative analysis: side-by-side comparison of multiple concepts
 │   ├── synthesis/             # Synthesis: cross-topic integration
 │   └── _Index_Wiki.md         # Wiki master index
-├── areas/                     # Human entry layer
-│   ├── College_Math.md        # One MOC per subject
-│   ├── Linux.md
-│   ├── Microcomputer_Principles.md
-│   └── _drafts/               # Agent-generated drafts, moved out after human review
-└── _Index_All.md              # Full index (human-maintained)
+└── areas/                     # Human entry layer
+    ├── _总览.md               # Overview: snapshot counts, entry points, open decisions
+    ├── College_Math.md        # One MOC per subject (8 subjects)
+    ├── Microcomputer_Principles.md
+    ├── Linux.md
+    ├── Artificial_Intelligence.md
+    ├── Java.md
+    ├── MySQL.md
+    ├── 大数据生态.md
+    ├── Embedded_System.md
+    └── _drafts/               # Agent-generated proposals, moved out after human review
 ```
 
 Legacy subject folders (`College_Math/`, etc.) remain temporarily in the root directory and will be gradually triaged into `raw/` or `areas/`.
@@ -164,7 +173,7 @@ Open the repository root with dsh (or Claude Code / Codex). After startup, the a
 
 - `raw/` read-only
 - `wiki/` readable and writable
-- `areas/` read-only; can write drafts to `_drafts/`
+- `areas/` writable only for agent-generated subject MOCs and `_drafts/`; human-written prose stays untouched
 
 ---
 ## Permission Rules
@@ -173,8 +182,7 @@ Open the repository root with dsh (or Claude Code / Codex). After startup, the a
 |---|---|
 | `raw/` | Read-only; modification, moving, and deletion are prohibited |
 | `wiki/` | Read/write; agent-owned |
-| `areas/` | Read-only; can write to `_drafts/` |
-| `_Index_All.md` | Read-only |
+| `areas/` | Read/write for agent-generated MOCs and `_drafts/`; human-written prose is read-only |
 | Legacy subject folders in root | Read-only |
 
 Operations beyond permissions are considered errors. Ask first when unsure.
@@ -190,5 +198,5 @@ Operations beyond permissions are considered errors. Ask first when unsure.
 ---
 ## Status
 
-Early setup stage. See `AGENTS.md` for core rules.
+Eight subjects; 37 raw knowledge materials compiled into 127 wiki content pages (36 summaries / 64 concepts / 19 entities / 5 comparisons / 3 syntheses), 12 of the concepts written from external sources without raw material (`provenance: external`). The subject MOCs under `areas/` are agent-generated and safe to rewrite. Core rules are in `AGENTS.md`.
 ```

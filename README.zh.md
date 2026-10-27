@@ -44,11 +44,15 @@ raw/  ──编译──▶  wiki/  ──汇总──▶  areas/
 ```
 Notes/
 ├── AGENTS.md                  # agent 操作契约，必须先读
-├── README.md                  # 本文件
+├── README.md                  # 英文版
+├── README.zh.md               # 本文件
 ├── raw/                       # 原始素材层（只读）
 │   ├── College_Math/
+│   ├── Microcomputer_Principles/
 │   ├── Linux/
-│   └── Microcomputer_Principles/
+│   ├── Artificial_Intelligence/
+│   ├── Frontend_Backend/      # Java、MySQL、大数据三件套
+│   └── Embedded_System/       # FPGA / Verilog
 ├── wiki/                      # 编译知识层（agent 拥有）
 │   ├── concepts/              # 概念页：一个概念一页
 │   ├── entities/              # 实体页：人物、工具、论文、课程
@@ -56,12 +60,17 @@ Notes/
 │   ├── comparisons/           # 对比分析：多个概念的横向比较
 │   ├── synthesis/             # 综合论述：跨主题的整合
 │   └── _Index_Wiki.md         # wiki 总索引
-├── areas/                     # 人类入口层
-│   ├── College_Math.md        # 每个学科一个 MOC
-│   ├── Linux.md
-│   ├── Microcomputer_Principles.md
-│   └── _drafts/               # agent 生成的草稿，人类审阅后移出
-└── _Index_All.md              # 全量索引（人类维护）
+└── areas/                     # 人类入口层
+    ├── _总览.md               # 总览：全库快照、入口、待裁决事项
+    ├── College_Math.md        # 每个学科一个 MOC，共 8 个
+    ├── Microcomputer_Principles.md
+    ├── Linux.md
+    ├── Artificial_Intelligence.md
+    ├── Java.md
+    ├── MySQL.md
+    ├── 大数据生态.md
+    ├── Embedded_System.md
+    └── _drafts/               # agent 生成的建议，人类审阅后移出
 ```
 
 历史遗留的学科文件夹（`College_Math/` 等）暂留根目录，逐步分流到 raw 或 areas。
@@ -163,7 +172,7 @@ tags:
 
 - `raw/` 只读
 - `wiki/` 可读写
-- `areas/` 只读，可写草稿到 `_drafts/`
+- `areas/` 仅 agent 生成的学科 MOC 与 `_drafts/` 可写；人类手写的正文保持只读
 
 ---
 ## 权限约定
@@ -172,8 +181,7 @@ tags:
 |---|---|
 | `raw/` | 只读，禁止修改、移动、删除 |
 | `wiki/` | 读写，agent 拥有 |
-| `areas/` | 只读，可写 `_drafts/` |
-| `_Index_All.md` | 只读 |
+| `areas/` | 读写（限 agent 生成的 MOC 与 `_drafts/`）；人类正文只读 |
 | 根目录历史学科文件夹 | 只读 |
 
 越权操作视为错误。不确定时先询问。
@@ -189,4 +197,4 @@ tags:
 ---
 ## 状态
 
-早期搭建阶段。核心规则见 `AGENTS.md`。
+8 个学科；37 篇原始素材已编译为 127 个 wiki 内容页（摘要 36 / 概念 64 / 实体 19 / 对比 5 / 综合论述 3），其中 12 个概念页无 raw 素材、依据外部资料编写（`provenance: external`）。`areas/` 下的学科 MOC 由 agent 生成，可放心改写。核心规则见 `AGENTS.md`。

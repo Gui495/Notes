@@ -1,6 +1,6 @@
 ---
 title: Linux
-updated: 2026-10-14
+updated: 2026-10-27
 tags:
   - moc
   - linux
@@ -100,5 +100,9 @@ flowchart TD
 
 - [[raw/Linux/ArchLinux Installation Guide]]
 - [[raw/Linux/Installation_Problems]]
+
+## 跨学科综述
+
+- [[从裸机到Hive-Metastore]] —— 从裸 CentOS 7 到 Hive 可查的版本与依赖链（本页是其底层）
 
 返回 [[_Index_Wiki]]。
